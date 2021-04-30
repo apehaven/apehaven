@@ -1,6 +1,6 @@
-# Ape Haven
+# ApeHaven
 
-The humble beginnings of the website home for the Ape Haven project.
+The humble beginnings of the website home for the ApeHaven project.
 
 ## Installation
 
