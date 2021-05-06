@@ -1,0 +1,7 @@
+extend type Query {
+    series: [Series!]! @paginate(defaultCount: 10, model: "DrewRoberts\\Blog\\Models\\Series")
+}
+type Series {
+    id: ID!
+    slug: String!
+}

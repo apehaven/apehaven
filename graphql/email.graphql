@@ -1,0 +1,10 @@
+extend type Query {
+    email_addresses: [EmailAddress!]! @paginate(defaultCount: 10, model: "Tipoff\\Authorization\\Models\\EmailAddress")
+}
+type EmailAddress {
+    id: ID!
+    email: String!
+    user: User @belongsTo(relation: "user")
+    created_at: DateTime!
+    updated_at: DateTime!
+}

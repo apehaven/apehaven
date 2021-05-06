@@ -1,0 +1,7 @@
+extend type Query {
+    layouts: [Layout!]! @paginate(defaultCount: 10, model: "DrewRoberts\\Blog\\Models\\Layout")
+}
+type Layout {
+    id: ID!
+    name: String!
+}
