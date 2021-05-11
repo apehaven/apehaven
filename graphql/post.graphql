@@ -1,6 +1,8 @@
 extend type Query {
     posts: [Post!]! @paginate(defaultCount: 10, model: "DrewRoberts\\Blog\\Models\\Post")
+    post(id: Int! @eq): Post @find(model: "DrewRoberts\\Blog\\Models\\Post")
 }
+
 type Post {
     id: ID!
     slug: String!
