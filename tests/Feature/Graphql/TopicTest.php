@@ -1,15 +1,15 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Graphql;
 
 use Tests\TestCase;
 use DrewRoberts\Blog\Models\Topic;
 use DrewRoberts\Blog\Models\Layout;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class TopicTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseMigrations;
 
     public function testGetOneTopic()
     {

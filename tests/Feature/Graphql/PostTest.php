@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Graphql;
 
 use Tests\TestCase;
 use DrewRoberts\Blog\Models\Post;
