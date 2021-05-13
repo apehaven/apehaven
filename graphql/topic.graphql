@@ -1,5 +1,6 @@
 extend type Query {
     topics: [Topic!]! @paginate(defaultCount: 10, model: "DrewRoberts\\Blog\\Models\\Topic")
+    topic(id: Int! @eq): Topic @find(model: "DrewRoberts\\Blog\\Models\\Topic")
 }
 
 type Topic {
@@ -7,6 +8,7 @@ type Topic {
     slug: String!
     title: String!
     layout: Layout @belongsTo(relation: "layout")
+    series: [Series] @hasMany
     note: String
     content: String
     webpage_id: ID
