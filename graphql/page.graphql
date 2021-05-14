@@ -1,0 +1,34 @@
+extend type Query {
+    pages: [Page!]! @paginate(defaultCount: 10, model: "DrewRoberts\\Blog\\Models\\Page")
+    page(id: Int! @eq): Page @find(model: "DrewRoberts\\Blog\\Models\\Page")
+}
+
+type Page {
+    id: ID!
+    slug: String!
+    title: String!
+    layout: Layout @belongsTo(relation: "layout")
+    is_location: Int!
+    is_leaf: Int!
+    is_root: Int!
+    path: String
+    depth: Int!
+    is_only_child: Int!
+    is_only_root_location: Int!
+    parent: Page @belongsTo(relation: "parent")
+    content: String!
+    webpage_id: ID
+    pageviews: Int!
+    description: String
+    ogdescription: String
+    image_id: ID
+    ogimage_id: ID
+    video_id: ID
+    author: User @belongsTo(relation: "author")
+    creator_id: ID
+    updater_id: ID
+    published_at: DateTime!
+    deleted_at: DateTime
+    created_at: DateTime!
+    updated_at: DateTime!
+}

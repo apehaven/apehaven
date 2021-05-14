@@ -1,0 +1,14 @@
+extend type Query {
+    users: [User!]! @paginate(defaultCount: 10, model: "Tipoff\\Authorization\\Models\\User")
+    user(id: ID @eq): User @find
+}
+
+type User {
+    id: ID!
+    first_name: String!
+    last_name: String!
+    username: String!
+    email_addresses: [EmailAddress] @hasMany(relation: "emailAddresses")
+    created_at: DateTime!
+    updated_at: DateTime!
+}
